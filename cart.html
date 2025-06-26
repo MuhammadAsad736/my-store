@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    h1 { color: #0a74da; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <ul id="cart-items"></ul>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    const cartList = document.getElementById("cart-items");
+
+    if (Object.keys(cart).length === 0) {
+      cartList.innerHTML = "<li>Your cart is empty.</li>";
+    } else {
+      for (let product in cart) {
+        let quantity = cart[product];
+        let li = document.createElement("li");
+        li.textContent = `${product} × ${quantity}`;
+        cartList.appendChild(li);
+      }
+    }
+  </script>
+</body>
+</html>
