@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<footer>
+  <p>&copy; 2025 My Cool Store. All rights reserved.</p>
+</footer>
+
+<body>
+  <nav><li><button onclick="clearCart()">Clear Cart</button></li>
+
+ <nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Contact</a></li>
+    <li style="margin-left: auto; font-weight: bold; color: #0a74da;">Cart 🛒 (<span id="cart-count">0</span>)</li>
+  </ul>
+</nav>
+
+</nav>
+
+  <header>
+    <h1>🛒 Cool Store For PC Accessories</h1>
+  </header>
+
+  <section class="products">
+  <div class="product" onclick="showDetails('Gaming Mouse', 'Ergonomic design, 7 programmable buttons, RGB lighting.', 'Rs. 2500')">
+  <img src="mouse.jpg" alt="Gaming Mouse">
+  <h2>Gaming Mouse</h2>
+  <p>Rs. 2500</p>
+  <button class="add-to-cart" data-product="Gaming Mouse">Add to Cart</button>
+</div>
+
+
+<div class="product" onclick="showDetails('RGB Keyboard', 'Mechanical keys, backlit RGB, anti-ghosting support.', 'Rs. 3500')">
+  <img src="keyboard.jpg" alt="RGB Keyboard">
+  <h2>RGB Keyboard</h2>
+  <p>Rs. 3500</p>
+  <button class="add-to-cart" data-product="RGB Keyboard">Add to Cart</button>
+</div>
+
+<div class="product" onclick="showDetails('24&quot; LED Monitor', 'Full HD 1080p, 75Hz refresh rate, slim bezel.', 'Rs. 17,999')">
+  <img src="monitor.jpg" alt="LED Monitor">
+  <h2>24" LED Monitor</h2>
+  <p>Rs. 17,999</p>
+  <button class="add-to-cart" data-product="LED Monitor">Add to Cart</button>
+</div>
+<div class="product" onclick="showDetails('Gaming Motherboard', 'Supports Intel 10th Gen, RGB header, DDR4 support.', 'Rs. 12,999')">
+  <img src="motherboard.jpg" alt="Gaming Motherboard">
+  <h2>Gaming Motherboard</h2>
+  <p>Rs. 12,999</p>
+  <button class="add-to-cart" data-product="Gaming Motherboard">Add to Cart</button>
+</div></section>
+  </section>
+ <div id="product-modal" class="modal">
+
+  <div class="modal-content">
+    <span class="close" onclick="closeDetails()">&times;</span>
+    <img id="modal-image" src="" alt="" style="width: 100%; max-width: 250px; border-radius: 8px; margin-bottom: 15px;">
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+    <p id="modal-price" style="font-weight: bold;"></p>
+    <button id="buy-now-button">Buy Now</button>
+    <p id="thank-you-msg" style="display: none; color: green; font-weight: bold; margin-top: 15px;">
+      ✅ Thank you for your interest!
+    </p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
